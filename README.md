@@ -1,8 +1,8 @@
 # Tic-Tac-Toe
-Tic-tac-toe game project made with javascript on the backend. (work-in progress)
-<h3 align="left">a TOP beginner project</h3>
+<h5>Description</h5>
 
 <p align="left">
+  Tic-tac-toe game project made with javascript on the backend. (work-in progress)
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
