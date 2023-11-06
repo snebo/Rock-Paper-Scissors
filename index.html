@@ -3,12 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic tac toe</title>
+  <title>Rock Paper Scissors |snebo</title>
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <p>check the console</p>
+  <div class="page">
+    <div class="score">Score: <span id="score_value">0:0</span></div>
+    <div class="game_container">
+      <div class="header"><h2>Playing Round..</h2></div>
+      <div class="game_options">
+        <button class="option rock">
+          <img src="#" alt="rock">
+        </button>
+        <button class="option paper">
+          <img src="#" alt="Paper">
+        </button>
+        <button class="option scissors">
+          <img src="#" alt="Sccissors">
+        </button>
+      </div>
+      <div class="round_outcome">
+        <img src="#" alt="player choice" class="player">
+        <img src="#" alt="versus" class="versus">
+        <img src="#" alt="computer choice" class="computer">
+      </div>
+      <h3 class="result">Win</h3>
+    </div>
+    <div class="footer">
+      <div class="contact">
+        <img src="#" alt="github icon">
+        <p><a href="#" target="_blank">Find me here.</a></p>
+      </div>
+    </div>
+  </div>
 
-  <script src="./scripts/logic.js"></script>
+  <!-- <script src="./scripts/logic.js"></script> -->
 </body>
 </html>
