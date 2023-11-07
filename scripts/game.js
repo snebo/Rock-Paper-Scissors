@@ -12,13 +12,13 @@ let rResult
 let round = 1
 let P_score =0
 let C_score =0
-let setGame= false
+let gameOver= true
 
 function setDefault(){
     score.textContent = "0:0"
     rResult = ""
     roundCount.textContent= "Playing Round 1"
-    setGame= true
+    gameOver = false
 }
 function getComputerChoice(choice){
     rand= Math.floor(Math.random()*choice.length);
@@ -60,10 +60,16 @@ function setRoundresult(result){
         else{C_score++; roundResult.textContent = "Lose"}
         return (P_score+":"+C_score)
     }
+    //on GameOver
     if (P_score>C_score){roundCount.textContent= "Player wins"}
     else if (P_score<C_score){roundCount.textContent= "You lost"}
     else{roundCount.textContent= " Wow! Its a draw"}
+
+    gameOver = true
+    pChoiceIcon.src = `./images/game.png`
+    cChoiceIcon.src =  `./images/over.png`
     return (P_score+":"+C_score)
+    
     
 }
 function gameReset(){
@@ -78,14 +84,16 @@ function playRound(rounds){
     playerChoices.forEach(playerChoice => playerChoice.addEventListener('click', ()=>{
         // whole round logic should go in here
         //set round choices
+        round++
         roundCount.textContent = `Playing Round ${round}`
         computerChoice = getComputerChoice(c_choices)
-        setMiniIcon(playerChoice.alt, computerChoice)
-
+        if(!gameOver){
+            setMiniIcon(playerChoice.alt, computerChoice)
+        }
         //compare round choices
         rResult = getRoundResult(playerChoice.alt, computerChoice)
         score.textContent = setRoundresult(rResult)
-        round++
+        
         }))
 }
 
