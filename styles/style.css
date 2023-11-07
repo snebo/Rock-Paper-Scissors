@@ -4,74 +4,114 @@
     box-sizing: border-box;
 }
 .page{
-    padding:5px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: aqua;
+    background-color: #61cdb5;
+}
+.top{
+    color: #ffe2a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding:10px 8%
 }
 .score{
-    align-self: flex-end;
-    margin: 20px 50px 0 0;
-    font-size: 2em;
+    font-size: 1.8rem;
 }
+
 .game_container{
-    width: 80%;
+    width: 85%;
     align-self: center;
-    background-color: antiquewhite;
-    flex: 5;
+    flex: 3;
     padding:20px;
-    margin-bottom: 40px;
-    border: 3px solid black;
-    border-radius: 30px;
+    margin-bottom: 30px;
+    border: 2px dotted #ffe2a0;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 .header{
+    color: white;
+    padding:10px;
     font-size: 28px;
     text-transform: capitalize;
 }
 .game_options{
     display: flex;
-    background-color: aqua;
-    width: 90%;
-    height: auto;
+    width: 75%;
     justify-content: space-evenly;
-    gap: 10px;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
 }
-.option{
-    object-fit: contain;
-    min-width: 300px;
-    height: 300px;
-    border: 2px solid black;
-    border-radius: 10px;
+.game_options>img{
+    min-width: 85px;
+    height: 100%;
+    cursor: pointer;
+    object-fit: fill;
+    border-radius: 50%;
+    flex-grow: 1;
+    flex-basis: 75%;
+    box-shadow: 1px 1px 10px black;
+    transition: 600ms;
+}
+.game_options>img:hover{
+    box-shadow: 4px 4px 20px;
+    transform: scale(1.08);
 }
 .round_outcome{
     display: flex;
-    background-color: aqua;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
 }
 .round_outcome>img{
-    minwidth: 100px;
-    height: 100px;
-    border: 3px solid black;
+    min-width: 80px;
+    height: 80px;
     flex: 1;
 }
 .result{
     padding: 0;
     margin: 0;
-    font-size: 2rem;
+    text-decoration: overline;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
 }
 .footer{
     width: 100%;
     text-align: center;
     padding: 10px;
-    background-color: aquamarine;
+    background-color: #ffe2a0;
+    color: #d7b85c;
     align-self: center;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: #d7b85c;
+    font-weight: bolder;
+}
+.icon{
+    width: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+    .game_options{
+        width: 100%;
+        gap: 20px;
+    }
 }
