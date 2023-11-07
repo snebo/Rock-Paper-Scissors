@@ -40,7 +40,8 @@
 .header{
     color: white;
     padding:10px;
-    font-size: 28px;
+    font-size: 34px;
+    font-weight: bolder;
     text-transform: capitalize;
 }
 .game_options{

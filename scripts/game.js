@@ -17,7 +17,7 @@ let setGame= false
 function setDefault(){
     score.textContent = "0:0"
     rResult = ""
-    roundCount.textContent= "Choose one to play the game"
+    roundCount.textContent= "Playing Round 1"
     setGame= true
 }
 function getComputerChoice(choice){
@@ -47,23 +47,38 @@ function getRoundResult(player, computer){
     }
 }
 function setRoundresult(result){
-    if (result == "You win"){
-        roundResult.textContent ="Win"
-        P_score ++;
+    if (P_score<5 && C_score<5){
+        if (result == "You win"){
+            roundResult.textContent ="Win"
+            P_score ++;
+        }
+        else if(result == "Draw"){
+            roundResult.textContent = "Draw"
+            P_score++;
+            C_score++;
+        }
+        else{C_score++; roundResult.textContent = "Lose"}
+        return (P_score+":"+C_score)
     }
-    else if(result == "Draw"){
-        roundResult.textContent = "Draw"
-        P_score++;
-        C_score++;
-    }
-    else{C_score++; roundResult.textContent = "Lose"}
+    if (P_score>C_score){roundCount.textContent= "Player wins"}
+    else if (P_score<C_score){roundCount.textContent= "You lost"}
+    else{roundCount.textContent= " Wow! Its a draw"}
     return (P_score+":"+C_score)
+    
 }
+function gameReset(){
+    // hide the hands elements
+    // change the vs to repeat Image
+    // create an eventlistner that resets the runs game
+    // from set defaults, remove the event listner
+}
+
 function playRound(rounds){
     // round only plays when player clicks an option
     playerChoices.forEach(playerChoice => playerChoice.addEventListener('click', ()=>{
         // whole round logic should go in here
         //set round choices
+        roundCount.textContent = `Playing Round ${round}`
         computerChoice = getComputerChoice(c_choices)
         setMiniIcon(playerChoice.alt, computerChoice)
 
@@ -71,14 +86,14 @@ function playRound(rounds){
         rResult = getRoundResult(playerChoice.alt, computerChoice)
         score.textContent = setRoundresult(rResult)
         round++
-            
-    }))
+        }))
 }
 
 function game(){
     // initilize defaults
+    setDefault()
     playRound(5)
 
 }
-setDefault()
+// setDefault()
 game()
